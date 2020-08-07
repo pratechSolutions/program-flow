@@ -1,4 +1,4 @@
-package com.programflow.programflow;
+package com.programflow.programflow.model;
 
 import java.time.YearMonth;
 
