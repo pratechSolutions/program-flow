@@ -2,6 +2,7 @@ package com.programflow.programflow.model;
 
 import java.util.Date;
 
+
 public class Event {
 
     private long eventId;

@@ -20,8 +20,6 @@ public class UserController {
             user=new User(2,"Zeynel","www.google.com","10.08.2020");
         else
             user=new User(0,"0","0","0");
-
-
         return user;
     }
 
