@@ -16,7 +16,7 @@ public class Event {
     public Event(long eventId, String eventName, String eventDescription, Date eventStartDate, Date eventEndDate, String eventLink) {
         this.eventId = eventId;
         this.eventName = eventName;
-        this.eventDescription = eventDescription;
+        this.eventDescription = eventDescription ;
         this.eventStartDate = eventStartDate;
         this.eventEndDate = eventEndDate;
         this.eventLink = eventLink;
