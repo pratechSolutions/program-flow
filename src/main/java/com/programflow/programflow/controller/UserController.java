@@ -2,12 +2,12 @@ package com.programflow.programflow.controller;
 
 
 import com.programflow.programflow.model.User;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class UserController {
+
+
 
     @GetMapping(value = "users/{userId}")
     public User getUser(@PathVariable int userId){
@@ -22,5 +22,8 @@ public class UserController {
             user=new User(0,"0","0","0");
         return user;
     }
+
+
+
 
 }
