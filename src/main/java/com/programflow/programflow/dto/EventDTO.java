@@ -1,14 +1,30 @@
 package com.programflow.programflow.dto;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 
 public class EventDTO {
 
+    @NotNull
+    @Valid
     private String eventName;
+
+    @NotNull
+    @Valid
     private String eventDescription;
+
+    @NotNull
+    @Valid
     private Date eventStartDate;
+
+    @NotNull
+    @Valid
     private Date eventEndDate;
+
+    @NotNull
+    @Valid
     private String eventLink;
 
     public EventDTO(String eventName, String eventDescription, Date eventStartDate, Date eventEndDate, String eventLink) {

@@ -14,7 +14,3 @@ INSERT INTO events (eventName,evetLocation, eventDescription,eventStartDate, eve
   ('Spring Boot project managemamt','ADANA', 'Spring Boot framework building', DATE '2020-11-14',DATE '2021-11-14', 'www.zoom.com/AXGDXG'),
   ('Oracle database using', 'LONDON','Oracle database building', DATE '2020-11-14',DATE '2021-11-14', 'www.zoom.com/sfafadfdfafa'),
   ('ELK Kibana', 'GERMANY','ELK Kibana using with Spring boot', DATE '2020-11-14',DATE '2021-11-14', 'www.zoom.com/ZXCVFD');
-
-
-
-
