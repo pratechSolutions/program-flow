@@ -1,73 +1,48 @@
 package com.programflow.programflow.model;
 
+
+import com.programflow.programflow.enums.Country;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import javax.persistence.*;
 import java.util.Date;
 
-
+@NoArgsConstructor
+@Entity
+@Data
+@AllArgsConstructor
+@EntityListeners(AuditingEntityListener.class)
+@Builder
 public class Event {
 
-    private long eventId;
+    @Id
+    @GeneratedValue
+    private Integer id;
+
+    @Column(unique = true)
+    private String eventId;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private User managerUser;
+
     private String eventName;
+
+    private String addressLine;
+
+    private Country country;
+
     private String eventDescription;
+
     private Date eventStartDate;
+
     private Date eventEndDate;
+
     private String eventLink;
 
+    private String postalCode;
 
-    public Event(long eventId, String eventName, String eventDescription, Date eventStartDate, Date eventEndDate, String eventLink) {
-        this.eventId = eventId;
-        this.eventName = eventName;
-        this.eventDescription = eventDescription ;
-        this.eventStartDate = eventStartDate;
-        this.eventEndDate = eventEndDate;
-        this.eventLink = eventLink;
-    }
-
-    public long getEventId() {
-        return eventId;
-    }
-
-    public void setEventId(long eventId) {
-        this.eventId = eventId;
-    }
-
-    public String getEventName() {
-        return eventName;
-    }
-
-    public void setEventName(String eventName) {
-        this.eventName = eventName;
-    }
-
-    public String getEventDescription() {
-        return eventDescription;
-    }
-
-    public void setEventDescription(String eventDescription) {
-        this.eventDescription = eventDescription;
-    }
-
-    public Date getEventStartDate() {
-        return eventStartDate;
-    }
-
-    public void setEventStartDate(Date eventStartDate) {
-        this.eventStartDate = eventStartDate;
-    }
-
-    public Date getEventEndDate() {
-        return eventEndDate;
-    }
-
-    public void setEventEndDate(Date eventEndDate) {
-        this.eventEndDate = eventEndDate;
-    }
-
-    public String getEventLink() {
-        return eventLink;
-    }
-
-    public void setEventLink(String eventLink) {
-        this.eventLink = eventLink;
-    }
 }
-

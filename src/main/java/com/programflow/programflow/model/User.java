@@ -1,20 +1,36 @@
 package com.programflow.programflow.model;
 
-import java.time.YearMonth;
+import lombok.*;
 
+import javax.persistence.*;
+import javax.validation.constraints.Email;
+
+@Data
+@ToString(exclude = {"event"})
+@Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
 
-    public int id;
-    public String name;
-    public String link;
-    public String time;
+    @Id
+    @GeneratedValue
+    private Integer id;
 
+    @Column(unique = true)
+    private String userId;
 
-    public User(int id, String name, String link, String time) {
-        this.id = id;
-        this.name = name;
-        this.link = link;
-        this.time = time;
-    }
+    @OneToOne(mappedBy = "managerUser")
+    private Event event;
+
+    private String fullName;
+
+    @Email
+    private String email;
+
+    private String password;
+
+    @Column(unique = true)
+    private String phoneNumber;
+
 }
-
