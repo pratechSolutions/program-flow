@@ -19,7 +19,7 @@ public class EventController {
 
     @PostMapping("/{userId}")
     @ApiOperation(value = "Add Company", httpMethod = "POST")
-    public ResponseEntity<String> addEvent (@RequestBody @Valid EventRequestDto eventRequestDto,
+    public ResponseEntity<String> addEvent(@RequestBody @Valid EventRequestDto eventRequestDto,
                                            @PathVariable String userId) {
         return ResponseEntity.status(HttpStatus.CREATED).body(eventService.addEvent(eventRequestDto, userId));
     }

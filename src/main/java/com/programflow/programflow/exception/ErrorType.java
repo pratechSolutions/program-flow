@@ -49,7 +49,6 @@ public enum ErrorType {
     COMPANY_ALREADY_EXISTS(1040, "The company already exist", NOT_ACCEPTABLE),
     EMAIL_ALREADY_EXISTS(1041, "Email already exist", NOT_ACCEPTABLE),
     JUST_BUYER_USER_CAN_HAVE_BUYER_TYPE(1042, "Just buyer user can have buyer type", BAD_REQUEST);
-//    UPDATE_USER_WITH_COMPANY_ID(1042, "Update user with company id", BAD_REQUEST);
 
     private final Integer code;
     private final String message;
