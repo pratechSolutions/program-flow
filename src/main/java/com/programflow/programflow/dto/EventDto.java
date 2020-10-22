@@ -9,9 +9,6 @@ import java.util.Date;
 @Data
 public class EventDto {
 
-    @NotNull
-    private String eventName;
-
     private String eventDescription;
 
     private Date eventStartDate;

@@ -1,8 +1,8 @@
 package com.programflow.programflow.dto.request;
 
 
-import com.programflow.programflow.util.validators.Email;
-import com.programflow.programflow.util.validators.Password;
+import com.programflow.programflow.util.validation.Email;
+import com.programflow.programflow.util.validation.Password;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

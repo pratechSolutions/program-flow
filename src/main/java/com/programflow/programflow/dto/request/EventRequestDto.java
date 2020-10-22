@@ -2,7 +2,7 @@ package com.programflow.programflow.dto.request;
 
 
 import com.programflow.programflow.enums.Country;
-import com.programflow.programflow.util.validators.PhoneNumber;
+import com.programflow.programflow.util.validation.PhoneNumber;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,6 +20,7 @@ import java.util.Date;
 @Builder
 public class EventRequestDto {
 
+    @NotNull
     private String eventName;
 
     @PhoneNumber
@@ -30,27 +31,20 @@ public class EventRequestDto {
     @ApiModelProperty(required = true)
     private String addressLine;
 
-    private String eventDescription;
 
-    @Size(max = 50)
-    @NotBlank(message = "City is mandatory")
-    @ApiModelProperty(required = true)
-    private String city;
+//    @Size(max = 50)
+//    @NotBlank(message = "City is mandatory")
+//    @ApiModelProperty(required = true)
+//    private String city;
 
-    @Size(max = 10)
-    @NotBlank(message = "Postal/Zip Code is mandatory.")
-    @ApiModelProperty(required = true)
-    private String postalCode;
+//    @Size(max = 10)
+//    @NotBlank(message = "Postal/Zip Code is mandatory.")
+//    @ApiModelProperty(required = true)
+//    private String postalCode;
 
-    @NotNull(message = "Country is mandatory")
-    @ApiModelProperty(required = true)
-    private Country country;
-
-    private Date eventStartDate;
-
-    private Date eventEndDate;
-
-    private String eventLink;
+//    @NotNull(message = "Country is mandatory")
+//    @ApiModelProperty(required = true)
+//    private Country country;
 
 }
 

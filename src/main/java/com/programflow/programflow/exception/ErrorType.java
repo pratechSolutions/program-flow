@@ -36,12 +36,12 @@ public enum ErrorType {
     EMAIL_SERVICE_ERROR(1027, "An error occurred in the email service", INTERNAL_SERVER_ERROR),
     EMAIL_SERVICE_BAD_REQUEST(1028, "Email service returned request as a bad request", BAD_GATEWAY),
     APPLICATION_NOT_FOUND(1029, "Application cannot be found", BAD_REQUEST),
-    COMPANY_NOT_FOUND(1030, "Company not found", BAD_REQUEST),
+    EVENT_NOT_FOUND(1030, "Event not found", BAD_REQUEST),
     MILL_NOT_FOUND(1031, "The mill cannot be found!", BAD_REQUEST),
     COMPANY_NOT_APPROVED(1032, "The Company is not approved. You are not allowed to take an action!", UNAUTHORIZED),
     MILL_ALREADY_AFFILIATED(1033, "The trader is already affiliated with the mill.", BAD_REQUEST),
     TRADER_NOT_FOUND(1034, "Trader company not found", BAD_REQUEST),
-    USER_HAS_ALREADY_COMPANY(1035, "The user has already a company", BAD_REQUEST),
+    USER_HAS_ALREADY_EVENT(1035, "The user has already a event", BAD_REQUEST),
     USER_IS_NOT_VERIFIED(1036, "The user is not verified.", UNAUTHORIZED),
     PRODUCT_NOT_FOUND(1037, "The product is not found.", BAD_REQUEST),
     NOT_ALLOWED_UPDATE(1038, "You are not allowed to update information", UNAUTHORIZED),
@@ -49,7 +49,6 @@ public enum ErrorType {
     COMPANY_ALREADY_EXISTS(1040, "The company already exist", NOT_ACCEPTABLE),
     EMAIL_ALREADY_EXISTS(1041, "Email already exist", NOT_ACCEPTABLE),
     JUST_BUYER_USER_CAN_HAVE_BUYER_TYPE(1042, "Just buyer user can have buyer type", BAD_REQUEST);
-//    UPDATE_USER_WITH_COMPANY_ID(1042, "Update user with company id", BAD_REQUEST);
 
     private final Integer code;
     private final String message;
