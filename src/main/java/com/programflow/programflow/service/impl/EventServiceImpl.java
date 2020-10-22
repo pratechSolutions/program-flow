@@ -8,11 +8,11 @@ import com.programflow.programflow.model.User;
 import com.programflow.programflow.repository.EventRepository;
 import com.programflow.programflow.service.EventService;
 import com.programflow.programflow.service.WebClientUserService;
+import com.programflow.programflow.util.MapperUtils;
 
 import java.util.UUID;
 
-import static com.programflow.programflow.exception.ErrorType.USER_HAS_ALREADY_COMPANY;
-import static com.programflow.programflow.exception.ErrorType.USER_NOT_FOUND;
+import static com.programflow.programflow.exception.ErrorType.*;
 
 
 public class EventServiceImpl implements EventService {
@@ -27,7 +27,7 @@ public class EventServiceImpl implements EventService {
                 webClientUserService.findByUserId(userId).orElseThrow(() -> new ProgramFlowException(USER_NOT_FOUND));
 
         if (!(userDto.getEventId() == null)) {
-            throw new ProgramFlowException(USER_HAS_ALREADY_COMPANY);
+            throw new ProgramFlowException(USER_HAS_ALREADY_EVENT);
         }
 
         Event event = new Event();
@@ -56,4 +56,15 @@ public class EventServiceImpl implements EventService {
 
         return eventRepository.save(event).getCompanyId();
     }
+
+    @Override
+    public EventDto getEventByEventId(String eventId) {
+
+        Event event =
+                eventRepository.findEventByEventId(eventId).orElseThrow(() -> new ProgramFlowException(EVENT_NOT_FOUND);
+
+        return MapperUtils.mapToEventDto(event);
+
+    }
+
 }

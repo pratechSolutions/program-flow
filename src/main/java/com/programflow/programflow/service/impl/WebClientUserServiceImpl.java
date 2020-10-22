@@ -45,6 +45,11 @@ public class WebClientUserServiceImpl implements WebClientUserService {
         return Optional.ofNullable(userDto);
     }
 
+    @Override
+    public void updateUser(UserDto userDto, String userId) {
+
+    }
+
 //    @Override
 //    public void updateUser(UserDto userDto, String userId) {
 //        webClient.put()

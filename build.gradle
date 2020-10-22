@@ -44,6 +44,11 @@ repositories {
         implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
         implementation 'org.springframework.boot:spring-boot-starter-web'
 
+        implementation('org.springframework.boot:spring-boot-starter-webflux')
+        compileOnly('org.projectlombok:lombok')
+        testImplementation('io.projectreactor:reactor-test')
+
+
         compileOnly 'org.projectlombok:lombok'
         developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
@@ -51,43 +56,40 @@ repositories {
         annotationProcessor 'org.projectlombok:lombok'
         // https://mvnrepository.com/artifact/org.springframework.security/spring-security-crypto
         compile group: 'org.springframework.security', name: 'spring-security-crypto', version: '3.1.0.RELEASE'
-        testImplementation('org.springframework.boot:spring-boot-starter-test') {
-            exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-        }
-        // https://mvnrepository.com/artifact/org.modelmapper/modelmapper
         compile group: 'org.modelmapper', name: 'modelmapper', version: '2.3.7'
-
         compile("org.springframework.boot:spring-boot-starter-web")
-
-        springFoxArtifacts.each {
-            artifact -> compile("io.springfox:$artifact:$springFoxVersion")
-        }
-
         swaggerCodegen("io.swagger:swagger-codegen-cli:$swaggerCodeGenVersion")
-
         testImplementation('org.springframework.boot:spring-boot-starter-test') {
             exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-        }
+    }
+    // https://mvnrepository.com/artifact/org.modelmapper/modelmapper
+
+
+    springFoxArtifacts.each {
+        artifact -> compile("io.springfox:$artifact:$springFoxVersion")
+    }
+
 
     }
-    task copySwaggerGeneratedCode(type: Copy) {
 
-        from "${buildDir}/swagger-code"
-        into "${projectDir}"
-    }
-    generateSwaggerCode {
+}
+task copySwaggerGeneratedCode(type: Copy) {
 
-        configFile = file('src/main/resources/swagger/config.json')
-        components = ['models', 'apis']
-        inputFile = file('src/main/resources/swagger/petstore-api.json')
-        language = 'spring'
-    }
-    generateSwaggerCode.finalizedBy(project.tasks.copySwaggerGeneratedCode)
+    from "${buildDir}/swagger-code"
+    into "${projectDir}"
+}
+generateSwaggerCode {
 
-    generateSwaggerDoc {
-        inputFile = file('src/main/resources/swagger/petstore-api.json')
-    }
-    test {
-        useJUnitPlatform()
-    }
+    configFile = file('src/main/resources/swagger/config.json')
+    components = ['models', 'apis']
+    inputFile = file('src/main/resources/swagger/petstore-api.json')
+    language = 'spring'
+}
+generateSwaggerCode.finalizedBy(project.tasks.copySwaggerGeneratedCode)
+
+generateSwaggerDoc {
+    inputFile = file('src/main/resources/swagger/petstore-api.json')
+}
+test {
+    useJUnitPlatform()
 }
