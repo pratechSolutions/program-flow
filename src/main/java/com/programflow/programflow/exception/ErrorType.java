@@ -23,13 +23,13 @@ public enum ErrorType {
     NO_DATA_FOUND(1026, "No data found", BAD_REQUEST),
     EMAIL_SERVICE_ERROR(1027, "An error occurred in the email service", INTERNAL_SERVER_ERROR),
     EMAIL_SERVICE_BAD_REQUEST(1028, "Email service returned request as a bad request", BAD_GATEWAY),
-    EVENT_NOT_FOUND(1030, "Event not found", BAD_REQUEST),
+    ASSEMBLY_NOT_FOUND(1030, "Assembly not found", BAD_REQUEST),
     COMPANY_NOT_APPROVED(1032, "The Company is not approved. You are not allowed to take an action!", UNAUTHORIZED),
-    USER_HAS_ALREADY_EVENT(1035, "The user has already a event", BAD_REQUEST),
+    USER_HAS_ALREADY_ASSEMBLY(1035, "The user has already an assembly", BAD_REQUEST),
     USER_IS_NOT_VERIFIED(1036, "The user is not verified.", UNAUTHORIZED),
     NOT_ALLOWED_UPDATE(1038, "You are not allowed to update information", UNAUTHORIZED),
     INVALID_COUNTRY(1039, "Invalid country name.", NOT_ACCEPTABLE),
-    EVENT_LINK_ALREADY_EXISTS(1040, "The company already exist", NOT_ACCEPTABLE),
+    ASSEMBLY_LINK_ALREADY_EXISTS(1040, "The company already exist", NOT_ACCEPTABLE),
     EMAIL_ALREADY_EXISTS(1041, "Email already exist", NOT_ACCEPTABLE);
 
     //    FILE_CANNOT_BE_DELETED(1009, "File cannot be deleted", INTERNAL_SERVER_ERROR),

@@ -1,4 +1,4 @@
-package com.programflow.programflow.model;
+package com.programflow.programflow.repository.entity;
 
 import com.programflow.programflow.enums.Country;
 import lombok.AllArgsConstructor;
@@ -18,15 +18,15 @@ import java.util.Date;
 @AllArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
 @Builder
-public class Event {
+public class Assembly {
     @Id
     @GeneratedValue
     private Integer id;
 
     @Column(unique = true)
-    private String eventId;
+    private String assemblyId;
 
-    private String eventName;
+    private String assemblyName;
 
     private String addressLine;
 
@@ -35,15 +35,15 @@ public class Event {
 
     private Country country;
 
-    private String eventDescription;
+    private String assemblyDescription;
 
     private String city;
 
-    private Date eventStartDate;
+    private Date assemblyStartDate;
 
-    private Date eventEndDate;
+    private Date assemblyEndDate;
 
-    private String eventLink;
+    private String assemblyLink;
 
     private String postalCode;
 

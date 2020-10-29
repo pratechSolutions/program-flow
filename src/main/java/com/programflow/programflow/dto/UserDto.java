@@ -18,12 +18,10 @@ public class UserDto {
 
     private String password;
 
-    private String eventName;
-
-    private String tradeName;
+    private String assemblyName;
 
     private String phoneNumber;
 
-    private String eventId;
+    private String assemblyId;
 }
 
