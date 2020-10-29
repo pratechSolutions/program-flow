@@ -1,4 +1,4 @@
-package com.programflow.programflow.model;
+package com.programflow.programflow.repository.entity;
 
 import lombok.*;
 
@@ -21,7 +21,7 @@ public class User {
     private String userId;
 
     @OneToOne(mappedBy = "managerUser")
-    private Event event;
+    private Event meeting;
 
     private String fullName;
 

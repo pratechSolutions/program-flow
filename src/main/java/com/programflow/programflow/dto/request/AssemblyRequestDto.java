@@ -18,10 +18,10 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @Builder
-public class EventRequestDto {
+public class AssemblyRequestDto {
 
     @NotNull
-    private String eventName;
+    private String assemblyName;
 
     @PhoneNumber
     private String phoneNumber;
@@ -31,20 +31,28 @@ public class EventRequestDto {
     @ApiModelProperty(required = true)
     private String addressLine;
 
+    private String assemblyDescription;
 
-//    @Size(max = 50)
-//    @NotBlank(message = "City is mandatory")
-//    @ApiModelProperty(required = true)
-//    private String city;
 
-//    @Size(max = 10)
-//    @NotBlank(message = "Postal/Zip Code is mandatory.")
-//    @ApiModelProperty(required = true)
-//    private String postalCode;
+    @Size(max = 50)
+    @NotBlank(message = "City is mandatory")
+    @ApiModelProperty(required = true)
+    private String city;
 
-//    @NotNull(message = "Country is mandatory")
-//    @ApiModelProperty(required = true)
-//    private Country country;
+    @Size(max = 10)
+    @NotBlank(message = "Postal/Zip Code is mandatory.")
+    @ApiModelProperty(required = true)
+    private String postalCode;
+
+    @NotNull(message = "Country is mandatory")
+    @ApiModelProperty(required = true)
+    private Country country;
+
+    private Date assemblyStartDate;
+
+    private Date assemblyEndDate;
+
+    private String assemblyLink;
 
 }
 

@@ -7,15 +7,15 @@ import java.util.Date;
 
 @NoArgsConstructor
 @Data
-public class EventDto {
+public class AssemblyDto {
 
-    private String eventDescription;
+    private String assemblyDescription;
 
-    private Date eventStartDate;
+    private Date assemblyStartDate;
 
-    private Date eventEndDate;
+    private Date assemblyEndDate;
 
-    private String eventLink;
+    private String assemblyLink;
 }
 
 

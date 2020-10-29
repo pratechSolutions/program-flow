@@ -1,32 +1,31 @@
 package com.programflow.programflow.util;
 
-import com.programflow.programflow.dto.EventDto;
-import com.programflow.programflow.dto.UserDto;
-import com.programflow.programflow.dto.request.EventRequestDto;
-import com.programflow.programflow.model.Event;
+import com.programflow.programflow.dto.AssemblyDto;
+import com.programflow.programflow.dto.request.AssemblyRequestDto;
+import com.programflow.programflow.repository.entity.Assembly;
+import jdk.internal.event.Event;
 
-import java.util.stream.Collectors;
 
 public class MapperUtils {
 
 
-    public static EventDto mapToEventDto(Event event) {
-        EventDto eventDto = new EventDto();
-        eventDto.setEventDescription("Address Line :" + event.getEventDescription() + ", " + event.getCity() + ", " + event.getCountry().toString() + ", " + event.getPostalCode());
-        eventDto.setEventStartDate(event.getEventStartDate());
-        eventDto.setEventEndDate(event.getEventEndDate());
-        eventDto.setEventLink(event.getEventLink());
+    public static AssemblyDto mapToAssemblyDto(Event assembly) {
+        AssemblyDto assemblyDto = new AssemblyDto();
+        assemblyDto.setAssemblyDescription("Address Line :" + assembly.getAssemblyDescription() + ", " + assembly.getCity() + ", " + assembly.getCountry().toString() + ", " + assembly.getPostalCode());
+        assemblyDto.setAssemblyStartDate(assembly.getAssemblyStartDate());
+        assemblyDto.setAssemblyEndDate(assembly.getAssemblyEndDate());
+        assemblyDto.setAssemblyLink(assembly.getAssemblyLink());
 
-        return eventDto;
+        return assemblyDto;
     }
 
-    public static EventRequestDto mapToEventRequestDto(Event event) {
-        EventRequestDto eventRequestDto = new EventRequestDto();
-        eventRequestDto.setEventName(event.getEventName());
-        eventRequestDto.setPhoneNumber(event.getPhoneNumber());
-        eventRequestDto.setAddressLine(event.getAddressLine());
+    public static AssemblyRequestDto mapToEventRequestDto(Assembly assembly) {
+        AssemblyRequestDto assemblyRequestDto = new AssemblyRequestDto();
+        assemblyRequestDto.setAssemblyName(assembly.getAssemblyName());
+        assemblyRequestDto.setPhoneNumber(assembly.getPhoneNumber());
+        assemblyRequestDto.setAddressLine(assembly.getAddressLine());
 
-        return eventRequestDto;
+        return assemblyRequestDto;
     }
 
 //    public static UserDto convertToUserDto(Event event) {

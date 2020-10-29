@@ -1,6 +1,7 @@
 package com.programflow.programflow.repository;
 
-import com.programflow.programflow.model.User;
+
+import org.apache.catalina.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

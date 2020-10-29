@@ -4,6 +4,7 @@ import com.programflow.programflow.dto.UserDto;
 import com.programflow.programflow.exception.ErrorType;
 import com.programflow.programflow.exception.ProgramFlowException;
 import com.programflow.programflow.service.WebClientUserService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
@@ -15,8 +16,9 @@ import reactor.core.publisher.Mono;
 import java.time.Duration;
 import java.util.Optional;
 
-@Service
 @Slf4j
+@RequiredArgsConstructor
+@Service
 public class WebClientUserServiceImpl implements WebClientUserService {
 
     private final WebClient webClient;
